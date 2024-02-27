@@ -2,8 +2,7 @@
 Kinda old fashion, but I love it.
 
 About:
- - Minimalist
- - Vertically arrange images, just like a good manga website
+ - Minimalist. Vertically arrange images, just like any good manga websites
  - Mouse do everything
  - Thumbs up
  - Dual monitors
@@ -15,8 +14,8 @@ WIP:
 
 Tsukkomi:
  - WPF didn't make it easy for multi-monitor...
- - If I start again, I'd choose a better framework... something modern and maybe support more platforms
- - MAUI seems nice and convient, but keyboard/mouse support maybe bit concerning?
+ - if I start again, I'd choose a better framework... something modern and maybe support more platforms. MAUI seems nice?
+ - if a config is only used once per 100 years, put them in a xml, or hire someone to do it
 
 
 
