@@ -15,7 +15,7 @@ WIP:
 Tsukkomi:
  - WPF didn't make it easy for multi-monitor...
  - if I start again, I'd choose a better framework... something modern and maybe support more platforms. MAUI seems nice?
- - if a config is only used once per 100 years, put them in a xml, or hire someone to do it
+ - if a config is only used once per 100 years, put them in a xml, or hire someone to do the config UI
 
 
 
