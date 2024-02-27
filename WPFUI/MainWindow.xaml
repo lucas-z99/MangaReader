@@ -1,0 +1,174 @@
+﻿<Window x:Class="WPFUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFUI"
+        mc:Ignorable="d"
+        
+        Title="MainWindow" Height="1080" Width="1920" Background="Transparent"
+    
+        PreviewMouseMove="OnMouseMove"
+        PreviewKeyDown="OnKeyDown"
+        Drop="OnDropFile"
+        SizeChanged="OnResizeWindow"
+        LocationChanged="OnMoveWindow"
+        
+        xmlns:gif ="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        >
+
+
+
+    <Grid x:Name="main_grid">
+
+        <Image x:Name="bg" Source="/Resources/bg.jpg"  Stretch="UniformToFill"  Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="-540" Canvas.Top="-360"/>
+        <Rectangle x:Name="bgDimmer" Fill="#A034353A"></Rectangle>
+
+
+        <!-- Images -->
+        <Canvas x:Name="canvas" RenderTransformOrigin="0.5,0.5" Height="1080" Width="1920" VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+        </Canvas>
+
+        <!-- Click area -->
+        <Rectangle x:Name="ui_clickArea" Opacity="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Fill="#19FFFFFF"       
+        AllowDrop="True"
+        MouseDown="ImageArea_MouseDown"
+        MouseUp="ImageArea_MouseUp"
+        MouseMove="ImageArea_MouseMove"
+        MouseWheel="ImageArea_MouseWheel"
+                   />
+
+
+        <!-- Buttons -->
+        <Label x:Name="text_info" Content="_" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="17,0,0,11" Width="791" Height="30"></Label>
+        <TextBox x:Name="input_tags" Text="_" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,32" Width="797" Background="Transparent" BorderBrush="Transparent" Foreground="White" Height="27" ></TextBox>
+
+        <Button x:Name="b_last" Click="Btn_LastFolder" Content="&lt;&lt;" Padding="-3" HorizontalAlignment="Right" Height="37" VerticalAlignment="Bottom" Width="62"  Margin="0,0,196,19"  Style="{DynamicResource Button_RoundedCorner}" FontSize="20"  />
+        <Button x:Name="b_next" Click="Btn_NextFolder" Content="&gt;&gt;" Padding="-3" HorizontalAlignment="Right" Height="37" VerticalAlignment="Bottom" Width="64" Margin="0,0,116,19" Style="{DynamicResource Button_RoundedCorner}" FontSize="20"   />
+        <Button x:Name="b_thumbUp" PreviewMouseUp="Btn_ThumbUp" Content="UP" HorizontalAlignment="Right" Height="37" VerticalAlignment="Bottom" Width="38" Margin="0,0,64,19" Style="{DynamicResource Button_RoundedCorner}" />
+        <Button x:Name="b_openFolder" Click="OpenInFileExplorer" Content="[ ]" HorizontalAlignment="Right" Height="123" VerticalAlignment="Bottom" Width="51" Background="#00DDDDDD" BorderBrush="#00707070" />
+        <Button x:Name="b_onePageMode" Click="Btn_OnePageMode" Content="pg" HorizontalAlignment="Right" Height="124" VerticalAlignment="Bottom" Width="51" Margin="0,0,0,258" Background="#00DDDDDD" BorderBrush="#00707070" />
+        <Button x:Name="b_toggleDelete" Click="Btn_ToggleDeleteUI" Content="Del" HorizontalAlignment="Right" Height="123" VerticalAlignment="Bottom" Width="51" Margin="0,0,0,129" Background="#00DDDDDD" BorderBrush="#00707070" />
+
+
+        <Button x:Name="b_deleteImage" Click="DeleteImage" Content="Del Image" HorizontalAlignment="Right" Height="44" VerticalAlignment="Bottom" Width="112" Margin="0,0,92,235" Style="{DynamicResource Button_RoundedCorner}" />
+        <Button x:Name="b_deleteFolder" Click="DeleteFolder" Content="Del Folder" HorizontalAlignment="Right" Height="44" VerticalAlignment="Bottom" Width="128"  Margin="0,0,84,173" Style="{DynamicResource Button_RoundedCorner}" />
+
+
+
+        <!-- Directory browser -->
+        <local:UIDirectoryBrowser x:Name="dir_browser"/>
+
+
+        <!-- More buttons -->
+        <local:UIMoreButtons x:Name="MoreButtons"/>
+
+
+        <!-- Top bar / Most thing should be above here -->
+        <Rectangle MouseMove="TitleBar_MouseMove" MouseDown="TitleBar_MouseDown" Opacity="0" Height="33"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black"  />
+        <Image Source="/Resources/placeholder.png" Visibility="Collapsed"/>
+
+        <Button Click="Btn_CloseApp" Content="X" Height="30" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="16" BorderBrush="#00707070" Background="#00000000"/>
+        <Button Click="Btn_FullScreen" Content="full" Height="30" Width="50" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="14" BorderBrush="#00707070" Background="#00000000"/>
+        <Button Click="Btn_Minimize" Content="—" Height="30" Width="50" Margin="0,0,100,0" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="#00707070"  Background="#00000000"/>
+
+
+        <!-- Debug -->
+        <Grid x:Name="debugUI" Width="600" Visibility="Collapsed" Margin="10,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="550"/>
+                <RowDefinition Height="26"/>
+                <RowDefinition Height="42"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="text_log" Grid.Row="0" Grid.Column="0" FontSize="14" TextWrapping="WrapWithOverflow" Background="#BF000000"  Foreground="White"/>
+
+            <TextBox x:Name="input_debug" Grid.Row="1" Grid.Column="0" FontSize="14" TextWrapping="WrapWithOverflow"/>
+            <Button Click="TEST" Content="Test" Grid.Row="2" Grid.Column="0" FontSize="20" Margin="0,0,410,0"/>
+            <Button Click="TEST2" Content="Test2" Grid.Row="2" FontSize="20" Margin="205,0,205,0" />
+            <Button Click="TEST3" Content="Test3" Grid.Row="2" FontSize="20" Margin="410,0,0,0" />
+
+        </Grid>
+
+        <Button Content="-" FontSize="10" VerticalContentAlignment="Top"
+                Click="b_ToggleDebugUI"  
+                VerticalAlignment="Top" HorizontalAlignment="Left" 
+                Height="14" Width="14"  
+                Style="{DynamicResource Button_RoundedCorner}" Background="#7FD4D4D4" Foreground="#FF3E3E3E" BorderBrush="#7F707070" Margin="10,9,0,0" 
+                />
+
+
+        <!-- Resize window -->
+        <Border MouseDown="ResizeR" Cursor="SizeWE" HorizontalAlignment="Right" Width="10" Background="Transparent"/>
+        <Border MouseDown="ResizeL" Cursor="SizeWE" HorizontalAlignment="Left" Width="10" Background="Transparent"/>
+        <Border MouseDown="ResizeT" Cursor="SizeNS" VerticalAlignment="Top" Height="10" Background="Transparent"/>
+        <Border MouseDown="ResizeB" Cursor="SizeNS" VerticalAlignment="Bottom" Height="10" Background="Transparent"/>
+
+        <Border MouseDown="ResizeTL" Cursor="SizeNWSE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="8" Width="10" Background="Transparent"/>
+        <Border MouseDown="ResizeTR" Cursor="SizeNESW" VerticalAlignment="Top" HorizontalAlignment="Right" Height="8" Width="10" Background="Transparent"/>
+        <Border MouseDown="ResizeBL" Cursor="SizeNESW" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="8" Width="10" Background="Transparent"/>
+        <Border MouseDown="ResizeBR" Cursor="SizeNWSE" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="8" Width="10" Background="Transparent"/>
+
+
+    </Grid>
+
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="Button_RoundedCorner" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0,1,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="4" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" Background="#B3CACACA" BorderBrush="#B0232323">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+</Window>

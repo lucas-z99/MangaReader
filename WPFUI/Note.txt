@@ -1,0 +1,9 @@
+
+功能：
+asyn loading
+gif
+
+
+
+其他：
+window size有点奇怪，scale=1时屏幕尺寸是748x1440？这是啥尺寸？
