@@ -16,7 +16,7 @@ WIP:
 Tsukkomi:
  - WPF didn't make it easy for multi-monitor...
  - If I start again, I'd choose a better framework... something modern and maybe support more platforms
- - MAUI seems nice and convient, but keyboard/mouse supporting is a bit concerning
+ - MAUI seems nice and convient, but keyboard/mouse support maybe bit concerning?
 
 
 
