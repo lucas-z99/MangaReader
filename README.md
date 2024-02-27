@@ -8,7 +8,7 @@ About:
  - Drop file / Mini directory navigator
 
 WIP:
- - search / add tag / filter (cmd only currently)
+ - search / tag / filter (cmd only for now)
 
 Idea:
  - better navigation when local library gets HUGE
