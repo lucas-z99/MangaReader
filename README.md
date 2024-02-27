@@ -9,9 +9,11 @@ About:
 
 WIP:
  - search / add tag / filter (cmd only currently)
- - need beter navigation when local library gets HUGE
+
+Idea:
+ - beter navigation when local library gets HUGE
  - some hack-ish web capability would be nice?  ->  either directly from web, or cloud drive / server (so you don't have to maintain the library locally)
- - better async loading  <-  maybe it's C++ time?
+ - faster async loading  <-  maybe it's C++ time?
 
 Tsukkomi:
  - WPF didn't make it easy for dual monitors...
