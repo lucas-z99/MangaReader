@@ -2,10 +2,10 @@
 Kinda old fashion, but I love it.
 
 About:
- - Like any good manga websites, but minimalist
+ - Image browser. Minimalist, like any good manga websites
  - Mouse do everything
  - Thumbs up
- - Mini folder navigator
+ - Drop file / Mini directory navigator
 
 WIP:
  - search / add tag / filter when navigating (cmd only currently)
