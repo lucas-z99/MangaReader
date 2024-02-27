@@ -11,7 +11,7 @@ WIP:
  - search / add tag / filter (cmd only currently)
 
 Idea:
- - beter navigation when local library gets HUGE
+ - better navigation when local library gets HUGE
  - some hack-ish web capability would be nice?  ->  either directly from web, or cloud drive / server (so you don't have to maintain the library locally)
  - faster async loading  <-  maybe it's C++ time?
 
