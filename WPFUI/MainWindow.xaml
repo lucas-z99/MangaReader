@@ -99,16 +99,10 @@
                 />
 
 
-        <!-- Resize window -->
-        <Border MouseDown="ResizeR" Cursor="SizeWE" HorizontalAlignment="Right" Width="10" Background="Transparent"/>
-        <Border MouseDown="ResizeL" Cursor="SizeWE" HorizontalAlignment="Left" Width="10" Background="Transparent"/>
-        <Border MouseDown="ResizeT" Cursor="SizeNS" VerticalAlignment="Top" Height="10" Background="Transparent"/>
-        <Border MouseDown="ResizeB" Cursor="SizeNS" VerticalAlignment="Bottom" Height="10" Background="Transparent"/>
+        <!-- Resize handles -->
+        <local:UIResizableWindow/>
 
-        <Border MouseDown="ResizeTL" Cursor="SizeNWSE" VerticalAlignment="Top" HorizontalAlignment="Left" Height="8" Width="10" Background="Transparent"/>
-        <Border MouseDown="ResizeTR" Cursor="SizeNESW" VerticalAlignment="Top" HorizontalAlignment="Right" Height="8" Width="10" Background="Transparent"/>
-        <Border MouseDown="ResizeBL" Cursor="SizeNESW" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="8" Width="10" Background="Transparent"/>
-        <Border MouseDown="ResizeBR" Cursor="SizeNWSE" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="8" Width="10" Background="Transparent"/>
+
 
 
     </Grid>

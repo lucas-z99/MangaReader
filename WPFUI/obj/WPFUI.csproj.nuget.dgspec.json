@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Main\\Code\\MangaReader\\WPFUI\\WPFUI.csproj": {}
+    "C:\\Main\\CodeGit\\MangaReader\\WPFUI\\WPFUI.csproj": {}
   },
   "projects": {
-    "C:\\Main\\Code\\MangaReader\\WPFUI\\WPFUI.csproj": {
+    "C:\\Main\\CodeGit\\MangaReader\\WPFUI\\WPFUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Main\\Code\\MangaReader\\WPFUI\\WPFUI.csproj",
+        "projectUniqueName": "C:\\Main\\CodeGit\\MangaReader\\WPFUI\\WPFUI.csproj",
         "projectName": "MangaReader",
-        "projectPath": "C:\\Main\\Code\\MangaReader\\WPFUI\\WPFUI.csproj",
+        "projectPath": "C:\\Main\\CodeGit\\MangaReader\\WPFUI\\WPFUI.csproj",
         "packagesPath": "C:\\Users\\sven_\\.nuget\\packages\\",
-        "outputPath": "C:\\Main\\Code\\MangaReader\\WPFUI\\obj\\",
+        "outputPath": "C:\\Main\\CodeGit\\MangaReader\\WPFUI\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

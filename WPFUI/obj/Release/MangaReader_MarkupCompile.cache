@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Main\Code\MangaReader\WPFUI\obj\Release\
+C:\Main\CodeGit\MangaReader\WPFUI\obj\Release\
 WPFUI
 none
 false
 TRACE
-C:\Main\Code\MangaReader\WPFUI\App.xaml
-3-1910536390
+C:\Main\CodeGit\MangaReader\WPFUI\App.xaml
+4858331957
 
-21-484237474
-164148062231
-MainWindow.xaml;UIDirectoryBrowser.xaml;UIMoreButtons.xaml;
+231799367543
+166-475744482
+MainWindow.xaml;UIResizableWindow.xaml;UIDirectoryBrowser.xaml;UIMoreButtons.xaml;
 
 False
 

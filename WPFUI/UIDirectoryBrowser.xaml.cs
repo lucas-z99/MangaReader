@@ -13,16 +13,19 @@ namespace WPFUI
      public partial class UIDirectoryBrowser : UserControl
      {
 
+          public static string cur_dir { get; private set; }
+
+
           string toggle_btn = "   +   ";
           string back_btn = "   ↑   ";
           int width = 485;
           int width_mini = 28;
           int height_mini = 28;
           bool is_toggled;
-          string cur_dir;
 
           AppState appState { get => Admin.appState; }
-
+          List<string> cache = new List<string>();
+          string zip_btn = "";
 
           public UIDirectoryBrowser()
           {
@@ -32,13 +35,13 @@ namespace WPFUI
           public void Init()
           {
                UpdateContent();
+
+               ZipManager.OnUnzipComplete += () => UpdateContent(cur_dir); // refresh after unzip
           }
 
 
 
           //   browser   --------------------------------------------------
-
-
           public void UpdateContent(string dir = "") // start here
           {
                if (dir == "")
@@ -56,33 +59,38 @@ namespace WPFUI
                     cur_dir = dir;
                     is_toggled = true;
 
-                    var child = Directory.GetDirectories(dir);
-                    if (child.Length > 0)
+                    var children = Directory.GetDirectories(dir);
+                    if (children.Length > 0)
                     {
                          // show toggle/back + all child 
                          list_box.Items.Add(toggle_btn);
                          list_box.Items.Add(back_btn);
 
-                         var _cache = new List<string>();
-                         foreach (var c in child)
-                              _cache.Add(c);
-                         _cache.sort_file_explorer_style();
+                         // add all children, sorted
+                         cache.Clear();
+                         foreach (var c in children)
+                              cache.Add(c);
+                         cache.sort_file_explorer_style();
 
-                         foreach (var c in _cache)
+                         foreach (var c in cache)
                               list_box.Items.Add(Path.GetFileName(c));
-
-                         UpdateSize();
                     }
                     else
                     {
                          // only show back
                          list_box.Items.Add(back_btn);
-
-                         //DirBrowser.Height = height_mini; // resize
-                         //DirBrowser.Width = width_mini;
-
-                         UpdateSize();
                     }
+
+                    // in addition, display zip file count
+                    var zip_count = Directory.GetFiles(dir, "*.zip").Length;
+                    if (zip_count > 0)
+                    {
+                         zip_btn = $"+{zip_count} zip";
+                         list_box.Items.Add(zip_btn);
+                    }
+
+                    UpdateSize();
+
                }
 
 
@@ -124,6 +132,12 @@ namespace WPFUI
                }
                else
                     dir = Path.Combine(cur_dir, clicking);
+
+               if (clicking == zip_btn)
+               {
+                    ZipManager.UnzipAll(cur_dir);
+                    return;
+               }
 
                if (dir == appState.dir)
                {

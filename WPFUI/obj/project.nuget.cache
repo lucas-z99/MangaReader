@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b80hmBYUApDKGvBSrx8zdPZSdLJIQTqns8qOOtb63ZeuXl2wKwmeHwQOfX73I5PqTEjYVn8MNpD3owSHKSDWwg==",
+  "dgSpecHash": "nOZo3+gqVloHJaVoQp++/mo1ZrIG1SR0tIKqbdYPlx3u5aunCLb9nW9untBFRxwUEv6BzeO8HzBFl88gLgFrgA==",
   "success": true,
-  "projectFilePath": "C:\\Main\\Code\\MangaReader\\WPFUI\\WPFUI.csproj",
+  "projectFilePath": "C:\\Main\\CodeGit\\MangaReader\\WPFUI\\WPFUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sven_\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\sven_\\.nuget\\packages\\microsoft.win32.registry.accesscontrol\\5.0.0\\microsoft.win32.registry.accesscontrol.5.0.0.nupkg.sha512",
