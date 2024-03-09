@@ -74,20 +74,29 @@
         <Button Click="Btn_Minimize" Content="—" Height="30" Width="50" Margin="0,0,100,0" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="#00707070"  Background="#00000000"/>
 
 
-        <!-- Debug -->
-        <Grid x:Name="debugUI" Width="600" Visibility="Collapsed" Margin="10,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="550"/>
-                <RowDefinition Height="26"/>
-                <RowDefinition Height="42"/>
-            </Grid.RowDefinitions>
+        <!-- debug -->
+        <Grid x:Name="UI_debug" Width="600" 
+              VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,30,0,0" 
+              >
+            <TextBlock x:Name="Text_debug_log" FontSize="14" Height="550" TextWrapping="WrapWithOverflow" Background="#BF000000" Foreground="White"/>
+            <TextBox x:Name="Input_debug" FontSize="14" Height="28" TextWrapping="WrapWithOverflow" Margin="0,548,0,-30"/>
 
-            <TextBlock x:Name="text_log" Grid.Row="0" Grid.Column="0" FontSize="14" TextWrapping="WrapWithOverflow" Background="#BF000000"  Foreground="White"/>
+            <Grid Margin="0,579,0,-73" Height="46">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="input_debug" Grid.Row="1" Grid.Column="0" FontSize="14" TextWrapping="WrapWithOverflow"/>
-            <Button Click="TEST" Content="Test" Grid.Row="2" Grid.Column="0" FontSize="20" Margin="0,0,410,0"/>
-            <Button Click="TEST2" Content="Test2" Grid.Row="2" FontSize="20" Margin="205,0,205,0" />
-            <Button Click="TEST3" Content="Test3" Grid.Row="2" FontSize="20" Margin="410,0,0,0" />
+                <Button Content="1" Click="TEST"  Grid.Column="0" FontSize="20" />
+                <Button Content="2" Click="TEST2" Grid.Column="1" FontSize="20" />
+                <Button Content="3" Click="TEST3" Grid.Column="2" FontSize="20" />
+                <Button Content="4" Click="TEST4" Grid.Column="3" FontSize="20" />
+                <Button Content="5" Click="TEST5" Grid.Column="4" FontSize="20" />
+            </Grid>
+
 
         </Grid>
 
@@ -107,6 +116,8 @@
 
     </Grid>
 
+
+    <!-- Styles -->
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">

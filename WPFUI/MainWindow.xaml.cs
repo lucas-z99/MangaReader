@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using Forms = System.Windows.Forms;
 
@@ -74,6 +75,7 @@ namespace WPFUI
                // debug
                Admin.Update += _debug_update;
                Admin.Update += _debug_reset_log;
+
           }
 
           //Forms.Screen[] screens;
@@ -116,7 +118,7 @@ namespace WPFUI
 
           void TEST(object sender, RoutedEventArgs e)
           {
-               ZipManager.UnzipAll(UIDirectoryBrowser.cur_dir);
+
           }
 
           void TEST2(object sender, RoutedEventArgs e)
@@ -129,7 +131,46 @@ namespace WPFUI
 
           }
 
+          void TEST4(object sender, RoutedEventArgs e)
+          {
+          }
 
+          void TEST5(object sender, RoutedEventArgs e)
+          {
+
+          }
+
+
+          ////   Gif test   --------------------------------------------------
+
+          // <!-- Gif test -->
+          //<MediaElement x:Name="gif1" 
+          //              Source="C:\Main\temp\1.gif"
+          //              LoadedBehavior="Play"
+          //              UnloadedBehavior="Manual"
+          //              MediaEnded="gif_1_MediaEnded"
+          //              Stretch="None"/>
+
+          //void gif_1_MediaEnded(object sender, RoutedEventArgs e)
+          //{
+          //     gif1.Position = new TimeSpan(0, 0, 1);
+          //     gif1.Play();
+          //}
+
+          //void test_display_gif1()
+          //{
+          //     gif1.Source = new Uri(@"C:\Main\temp\1.gif", UriKind.Absolute);
+          //     gif1.Visibility = Visibility.Visible;
+          //}
+          //void test_display_gif2()
+          //{
+          //     gif1.Source = new Uri(@"C:\Main\temp\2.gif", UriKind.Absolute);
+          //     gif1.Visibility = Visibility.Visible;
+          //}
+          //void test_hide_gif()
+          //{
+          //     gif1.Visibility = Visibility.Collapsed;
+          //}
 
 
           //   monitor   --------------------------------------------------
@@ -291,10 +332,10 @@ namespace WPFUI
                          break;
                     case Key.Enter:
 
-                         if (FocusManager.GetFocusedElement(this) == input_debug) //focus on
+                         if (FocusManager.GetFocusedElement(this) == Input_debug) //focus on
                          {
-                              CMD.Enter(input_debug.Text);
-                              input_debug.Text = "";
+                              CMD.Enter(Input_debug.Text);
+                              Input_debug.Text = "";
                               e.Handled = true;
                          }
                          else if (PendingDecision != null)
@@ -565,7 +606,7 @@ namespace WPFUI
 
           void _debug_reset_log()
           {
-               text_log.Text = _debug_log;
+               Text_debug_log.Text = _debug_log;
                _debug_log = "";
           }
 
@@ -577,13 +618,12 @@ namespace WPFUI
                if (show)
                     _state = Visibility.Visible;
 
-               debugUI.Visibility = _state;
+               UI_debug.Visibility = _state;
           }
           void b_ToggleDebugUI(object sender, RoutedEventArgs e)
           {
                ToggleDebugUI(!appState.debug_window);
           }
-
 
      }
 
