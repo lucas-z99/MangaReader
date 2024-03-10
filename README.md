@@ -1,5 +1,5 @@
 # MangaReader
-It's an image browser. Kinda old fashion but I love it.
+It's an image browser for PC. Kinda old fashion but I love it.
 
 ### Why bother?
 Other reader on PC is either clunky or ugly. So one day I figure why not try building one myself..
