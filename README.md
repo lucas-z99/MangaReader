@@ -2,7 +2,7 @@
 It's an image browser. Kinda old fashion but I love it.
 
 ### Why bother?
-For a long while every other reader on PC is either clunky or ugly. So one day I figure why not try building one myself..
+Other reader on PC is either clunky or ugly. So one day I figure why not try building one myself..
 
 
 ### Features
