@@ -6,13 +6,13 @@ Other reader on PC is either clunky or ugly. So one day I figure why not try bui
 
 
 ### Features
- - Minimalist. Like a good manga website
- - Mouse do everything
- - Thumbs up
+ - UI of a clean manga website
+ - Smooth mouse input
+ - Thumbs up your favorite
  - Mini directory navigator
  - and a billion QoL
 
-# TLDR
+# WIP
 ### WIP
  - search / tag / filter (cmd only for now)
 
