@@ -2,7 +2,7 @@
 It's an image browser for PC. Kinda old fashion but I love it.
 
 ### Why bother?
-Inspired by Honeyview. But still I'm not 200% happy about it. So one day I figure why not try building one myself..
+Inspired by XnView / Honeyview. But still I'm not 200% happy about it. So one day I figure why not try building one myself..
 
 
 ### Features
